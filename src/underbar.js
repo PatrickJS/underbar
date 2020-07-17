@@ -2,15 +2,21 @@ var _ = {};
 
 (function() {
 
+  // Returns whatever value is passed as the argument. 
+  // If a function needs to provide an iterator when the user 
+  // does not pass one in, use the identity function.
+  _.identity = function(val) {
+    return val;
+  };
+  
+  // Like last, but for the first elements
+  _.first = function(array, n) {
+  };
+
   // Return an array of the last n elements of an array. If n is undefined,
   // return just the last element.
   _.last = function(array, n) {
-  };
-
-  // Like last, but for the first elements
-  _.first = function(array, n) {
-    // TIP: you can often re-use similar functions in clever ways, like so:
-    return _.last(array.reverse(), n);
+    // TIP: you can often re-use similar functions in clever ways
   };
 
 
