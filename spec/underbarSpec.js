@@ -1,5 +1,24 @@
 var returnArguments = function(){ return arguments; };
 
+
+describe("first", function() {
+  it("should be able to pull out the first element of an array", function() {
+    expect(_.first([1,2,3])).to.equal(1);
+  });
+
+  it("should be able to accept a user-defined index", function() {
+    expect(_.first([1,2,3], 0)).to.eql([]);
+    expect(_.first([1,2,3], 2)).to.eql([1, 2]);
+    expect(_.first([1,2,3], 5)).to.eql([1, 2, 3]);
+  });
+
+  it("should work on an arguments object", function() {
+    var args = returnArguments(1,2,3);
+    expect(_.first(args, 2)).to.eql([1,2]);
+  });
+
+});
+
 describe("last", function() {
   it("should pull the last element from an array", function() {
     expect(_.last([1,2,3])).to.equal(3);
@@ -24,26 +43,8 @@ describe("last", function() {
 
 });
 
+
 /*
-
-describe("first", function() {
-  it("should be able to pull out the first element of an array", function() {
-    expect(_.first([1,2,3])).to.equal(1);
-  });
-
-  it("should be able to accept a user-defined index", function() {
-    expect(_.first([1,2,3], 0)).to.eql([]);
-    expect(_.first([1,2,3], 2)).to.eql([1, 2]);
-    expect(_.first([1,2,3], 5)).to.eql([1, 2, 3]);
-  });
-
-  it("should work on an arguments object", function() {
-    var args = returnArguments(1,2,3);
-    expect(_.first(args, 2)).to.eql([1,2]);
-  });
-
-});
-
 describe("each", function() {
   it("should provide value and iteration count", function() {
     var letters = ['a', 'b', 'c'];
